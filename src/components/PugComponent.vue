@@ -6,6 +6,8 @@ const store = usePiniaStore();
 
 setInterval(() => store.increment(), 1000);
 </script>
-<template>
-    <div class="counter">{{ store.count }}</div>
+<template lang="pug">
+.counter {{ store.count }}
+// Тут корректно выдаст ошибку при npm run type-check
+.counter {{ store.noname }}
 </template>
